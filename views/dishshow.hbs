@@ -1,0 +1,25 @@
+<h2>Мои рецепты</h2>
+
+{{#if todos.length}}
+
+  {{#each todos}}
+
+     <ul type="1" class="todo" ><li>
+    <form action="/complete" method="POST">
+    
+    <input type="checkbox" class="read-more-checker" id="read-more-checker" />
+    <div class="limiter">
+      <b>  <input type="checkbox" checked name="completed">
+       <span class="completed">{{title}}</span></b>
+         <div class="bottom"></div>
+</div>
+<label for="read-more-checker" class="read-more-button"></label>
+     </form>
+  </li></ul>
+  {{/each}}
+
+{{else}}
+<p>Нет сохраненных рецептов
+  <button type="submit" class="btn">Сохранить</button>
+</p>
+{{/if}}

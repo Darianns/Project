@@ -1,0 +1,27 @@
+<h2>Мои планы:</h2>
+
+{{#if diaryshow.length}}
+<ul>
+  {{#each diaryshow}}
+  <li class="diary">
+    <form action="/complete" method="POST">
+      <label>
+        {{#if completed}}
+        <input type="checkbox" checked name="completed">
+        <span class="completed">{{title}}</span>
+        {{else}}
+        <input type="checkbox" name="completed">
+        <span>{{title}}</span>
+        {{/if}}
+
+        <input type="hidden" value="{{_id}}" name="id">
+
+        <button class="btn btn-small" type="submit">Выполнено</button>
+      </label>
+    </form>
+  </li>
+  {{/each}}
+</ul>
+{{else}}
+<p>Задания отсутствуют</p>
+{{/if}}

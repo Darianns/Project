@@ -1,0 +1,90 @@
+
+<div class="block" >
+<div class="block-header">
+<span>Рассчитать индекс массы тела<br> (ИМТ):</span>
+                </div>
+
+
+<div class="sex">
+<span>Выбирете ваш пол:</span><br>
+<button id="wsex">Женский</button>
+<button id="msex">Мужской</button>
+
+</div>
+<!-- поле ввода первого числа -->
+
+	<div class="cell">
+                <span>Рост</span>
+                <input type="number" id="hight">
+            </div>
+            <div class="cell">
+                <span>Вес</span>
+                <input type="number" id="weight">
+            </div>
+            <div class="cell">
+                <span>Возраст</span>
+                <input type="number" id="age">
+       
+            </div>
+
+<br>
+
+	<!-- кнопка для расчётов -->
+	<button onclick="func()">Посчитать</button>
+<br>
+
+	<!-- здесь будет результат -->
+	  <div class="cell">
+                <span>Индекс Массы Тела</span>
+                <div  id="result1"></div> 
+            </div>
+            <div class="cell">
+                <span>Итог</span>
+                <div id="result2"></div> 
+            </div>
+            <div class="cell">
+                <span>Идеальный вес</span>
+                <div id="result3"></div> </div>
+                <div class="cell">
+                <span>Норма воды</span>
+                <div id="result4"></div> </div></div>
+
+	<!-- наш скрипт -->
+	<script>
+	  // переменная, в которой хранится выбранное математическое действие
+	  var op; 
+
+	  // функция расчёта
+	  function func() {
+	  	// переменная для результата
+	    var result;
+    
+	    // получаем первое и второе число
+	    var num1 = Number(document.getElementById("hight").value);
+      var num2 = Number(document.getElementById("weight").value);
+      var num3 = Number(document.getElementById("age").value);
+	    // смотрим, что было в переменной с действием, и действуем исходя из этого
+	
+
+	    // отправляем результат на страницу
+	    document.getElementById("result1").innerHTML = (num2 /((num1/ 100) * (num1/ 100))).toFixed(2);
+      document.getElementById("result3").innerHTML = (Math.round(num1 - (100 + (num1 - 100) / 10)));
+      document.getElementById("result2").innerHTML = result2;
+      if ( result1.innerHTML <18.5)
+ result2.innerHTML=('Недостаточная масса тела')
+else if( result1.innerHTML>=18.5 && result1.innerHTML<24.9)
+  result2.innerHTML=('Нормальная масса тела')
+else if( result1.innerHTML>=25 && result1.innerHTML<29.9)
+ result2.innerHTML=('Избыточная масса тела')
+else if( result1.innerHTML>=30 && result1.innerHTML<34.9)
+ result2.innerHTML=('Ожирение I степени')
+else if( result1.innerHTMLL>=35 && result1.innerHTML<=40)
+ result2.innerHTML=('Ожирение II степени')
+else if( result1.innerHTML>40)
+ result2.innerHTML=('Ожирение III степени')
+else
+result2.innerHTML=('Неверные данные')
+document.getElementById("result4").innerHTML = (num2 * 0.035).toFixed(2) + ( 'л');
+      
+	  }
+	</script>

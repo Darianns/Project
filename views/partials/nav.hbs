@@ -1,0 +1,17 @@
+  <nav class="blue lighten-2">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">MyBodyTime</a>
+      <ul class="right hide-on-med-and-down">
+        {{#if isCreate}}
+        <li class="active"><a href="/create"><i class="material-icons left">Навигация</i></a></li>
+          {{else}}
+       <li><a href="/create"><i class="material-icons left">Навигация</i></a></li>
+        {{/if}}
+        {{#if isIndex}}
+        <li class="active"><a href="/"><i class="material-icons left">На главную</i></a></li>
+        {{else}}
+        <li><a href="/"><i class="material-icons left">На главную</i></a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
